@@ -61,19 +61,19 @@ echo "my name is Eric"
 # now, really, answer the above question as yourself
 
 ```{bash}
-
+echo "my name is Caitlin"
 ```
 
 # print the absolute path of the top level of the homework directory where this is
 
 ```{bash}
-
+pwd
 ```
 
 # list, in long format, all the files and directories in this homework directory
 
 ```{bash}
-
+ls -l
 ```
 
 Note that some of the file names might look garbled in the Rmarkdown output.  This
@@ -83,19 +83,22 @@ colorizing `ls` output.
 # There is a directory called `.git` in here that didn't get listed. List everything again, but make sure `.git` is in the output
 
 ```{bash}
-
+ls -la
 ```
 
 # What are the other hidden files/directories that show up in the above listing? Just list them in the fenced text block below
 
 ```
-
+.
+..
+.Rproj.user
+.gitignore
 ```
 
 # List (long format) the contents of the directory `.git`
 
 ```{bash}
-
+ls -l .git/
 ```
 
 # if you wanted to type `ls fastq/DPCh_plate1_A06_S6.R1.fq.gz` on the command line, what is the fewest keystrokes that can get you `fastq/DPCh_plate1_A06_S6.R1.fq.gz` using TAB completion?
@@ -103,37 +106,40 @@ colorizing `ls` output.
 I did it in 10 (counting TABs)...
 
 ```
-
+ok, 10!
 ```
 
 # make a new directory called `lonely-fastqs`, and inside of that, two directories R1 and R2
 
 ```{bash}
-
+mkdir -p lonely-fastqs/R1 lonely-fastqs/R2
 ```
 
 # Copy (not move) all the read1 (`R1`) fastq files in `fastqs` into `lonely-fastqs/R1` and all the read2 fastqs into `lonely-fastqs/R2`. When you are done, on the next line in the code block, list the contents of `lonely-fastqs/R1` and `lonely-fastqs/R2`
 
 ```{bash}
-
+cp fastq/*R1.fq.gz lonely-fastqs/R1
+cp fastq/*R2.fq.gz lonely-fastqs/R2
+ls lonely-fastqs/R1
+ls lonely-fastqs/R2
 ```
 
 # do a recursive, short listing of the contents of `lonely-fastqs`
 
 ```{bash}
-
+ls -R lonely-fastqs/
 ```
 
 # Use the recursive (-r) option to remove `lonely-fastqs` and its contents
 
 ```{bash}
-
+rm -r lonely-fastqs/
 ```
 
 # Make two new directories in the top level of the repo called `fq_AB` and `fq_notAB`
 
 ```{bash}
-
+mkdir fq_AB fq_notAB
 ```
 
 If you get an error because you already created those directories, that is OK
